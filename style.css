@@ -1,12 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
+:root {
+    --primary-bg-color: #07171D;
+    --clock-wrapper-bg-color: #07171D;
+    --clock-wrapper-font-color: #adc3d1;
+    --primary-white-color: #ffffff;
+    --dayBox-font-color: #051115;
+    --pop-up-bg-color: #121212;
+    --hour-hand-color: #FF2E63;
+    --minute-hand-color: #FFFFFF;
+    --second-hand-color: #1A73E8;
+    --wrapper-shadow: 0 0 40px 1px #b6b6b67b;
+    --primary-text-color: #FFFFFF;
+}
+
+.lightMode {
+    /* --primary-bg-color: #f6f7fb; */
+    --primary-bg-color: #F3F2ED;
+    --clock-wrapper-bg-color: #EBF6F7;
+    --clock-wrapper-font-color: #57636b;
+    --primary-white-color: #ffffff;
+    --dayBox-font-color: #051115;
+    --pop-up-bg-color: #121212;
+    --minute-hand-color: #18191a;
+    --wrapper-shadow: 0 0px 20px rgba(0, 0, 0, 0.185);
+    --primary-text-color: #18191a;
+}
+
 * {
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: #07171D;
+    background-color: var(--primary-bg-color);
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -19,17 +46,18 @@ body {
 }
 
 .clockWrapper {
+    background-color: var(--clock-wrapper-bg-color);
     width: 350px;
     height: 350px;
     border-radius: 50%;
-    border: 3px solid #051115;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    color: #adc3d1;
-    box-shadow: 0 0 20px 15px #0C1E25;
+    color: var(--clock-wrapper-font-color);
+    /* box-shadow: 0 0 40px 1px #b6b6b67b; */
+    box-shadow: var(--wrapper-shadow);
 }
 
 .clockWrapper::before {
@@ -37,7 +65,7 @@ body {
     position: absolute;
     width: 10px;
     height: 10px;
-    background-color: #ffff;
+    background-color: var(--minute-hand-color);
     border-radius: 50%;
     z-index: 5;
 }
@@ -63,7 +91,6 @@ body {
 
 .clockHands i {
     height: 120px;
-    background-color: var(--color);
     border-radius: 10px;
     width: 4px;
     position: absolute;
@@ -72,10 +99,16 @@ body {
 
 #hour i {
     height: 70px;
+    background-color: var(--hour-hand-color);
 }
 
 #minute i {
     height: 100px;
+    background-color: var(--minute-hand-color);
+}
+
+#second i {
+    background-color: var(--second-hand-color);
 }
 
 #hour {
@@ -93,10 +126,10 @@ body {
 #daybox {
     text-align: center;
     font-size: 12px;
-    color: #051115;
+    color: var(--dayBox-font-color);
     width: auto;
     height: 18px;
-    background-color: #ffffff;
+    background-color: var(--primary-white-color);
     transform: translate(-18px, 100px);
     box-sizing: border-box;
     border-radius: 5px;
@@ -108,10 +141,10 @@ body {
     position: absolute;
     text-align: center;
     font-size: 12px;
-    color: #051115;
+    color: var(--dayBox-font-color);
     width: auto;
     height: 18px;
-    background-color: #ffffff;
+    background-color: var(--primary-white-color);
     transform: translate(80px, -8px);
     border-radius: 5px;
     box-sizing: border-box;
@@ -122,12 +155,12 @@ body {
     top: 90vh;
     position: absolute;
     display: block;
-    color: #ffffff;
+    color: var(--primary-text-color);
     letter-spacing: 2.5px;
 }
 
 .text-container a {
-    color: #ffffff;
+    color: var(--primary-text-color);
 }
 
 .pop-up {
@@ -138,10 +171,10 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #121212;
+    background-color: var(--pop-up-bg-color);
     z-index: 999;
     filter: opacity(90%);
-    color: #ffffff;
+    color: var(--primary-white-color);
     font-size: 40px;
     letter-spacing: 8px;
 }
@@ -174,7 +207,29 @@ body {
 }
 
 .close-me-box img:hover {
-    background-color: #842626;
     transition-duration: 0ms;
     cursor: pointer;
+}
+
+.toggle-Mode {
+    display: block;
+    position: absolute;
+    top: 2vh;
+    right: 5vw;
+}
+
+.toggle-Mode img {
+    width: 48px;
+    height: 48;
+    transition: ease-in-out 500ms;
+}
+
+.toggle-Mode img:hover {
+    cursor: pointer;
+    transform: rotate(180deg);
+    transition-duration: 500ms;
+}
+
+.switch:last-child{
+    display: none;
 }

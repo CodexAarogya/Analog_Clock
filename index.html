@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="darkMode">
+    <div class="toggle-Mode" onclick="toggle()">
+        <span class="switch"><img src="icons/light.svg" alt="toggle-lightMode"></span>
+        <span class="switch"><img src="icons/dark.svg" alt="toggle-lightMode"></span>
+    </div>
     <div class="pop-up">
         <div class="close-me-box" onclick="closeMe()"><img src="icons/delete-cross-round-white-icon.svg" alt="close">
         </div>
@@ -16,17 +20,17 @@
             <p>Connect With Me on</p>
             <span><a href="https://github.com/CodexAarogya" target="_blank"><img src="icons/github-white-icon.svg"
                         alt="github"></a></span>
-            <span><a href="www.linkedin.com/in/aarogyaparajuli" target="_blank"><img src="icons/linkedin-app-white-icon.svg"
-                        alt="Linkedin"></a></span>
-            <span><a href="https://www.instagram.com/aarogya_prj/" target="_blank"><img src="icons/instagram-white-icon.svg"
-                        alt="github"></a></span>
+            <span><a href="www.linkedin.com/in/aarogyaparajuli" target="_blank"><img
+                        src="icons/linkedin-app-white-icon.svg" alt="Linkedin"></a></span>
+            <span><a href="https://www.instagram.com/aarogya_prj/" target="_blank"><img
+                        src="icons/instagram-white-icon.svg" alt="github"></a></span>
         </div>
     </div>
     <div class="clockWrapper">
         <div id="clockContainer">
-            <div style="--color:#FF2E63;" class="clockHands" id="hour"><i></i></div>
-            <div style="--color:#FFFFFF;" class="clockHands" id="minute"><i></i></div>
-            <div style="--color:#1A73E8 ;" class="clockHands" id="second"><i></i></div>
+            <div class="clockHands" id="hour"><i></i></div>
+            <div class="clockHands" id="minute"><i></i></div>
+            <div class="clockHands" id="second"><i></i></div>
             <div id="daybox">day</div>
             <div id="datebox">date</div>
             <span style="--i:1;"><b>1</b></span>

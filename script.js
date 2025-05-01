@@ -47,5 +47,22 @@ function closeMe() {
     popup.style.display = "none";
 }
 
+// toggle modes --------------------------
 
+let toggleSwitch = document.querySelector('body')
+
+function toggle() {
+    if (toggleSwitch.className == "darkMode") {
+        toggleSwitch.removeAttribute('class');
+        toggleSwitch.setAttribute('class', 'lightMode');
+        document.querySelector('.toggle-Mode').firstElementChild.style.display = "none";
+        document.querySelector('.toggle-Mode').lastElementChild.style.display = "block";
+    }
+    else if (toggleSwitch.className == "lightMode") {
+        toggleSwitch.removeAttribute('class');
+        toggleSwitch.setAttribute('class', 'darkMode');
+        document.querySelector('.toggle-Mode').firstElementChild.style.display = "block";
+        document.querySelector('.toggle-Mode').lastElementChild.style.display = "none";
+    }
+}
 
